@@ -16,6 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet"></link>
+      </head>
+      
       <body className={`${inter.className} w-full min-h-screen m-0 p-0`}>
         {children}
       </body>
