@@ -35,6 +35,8 @@ export default function Home() {
         image={BobaImage.src}
         orientation={1}
         fontSize={"1.8"}/>
+
+        
       </div>
       <div className="mt-auto w-full">
         <Footer />
