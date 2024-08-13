@@ -1,18 +1,39 @@
 import Nav from "./components/Nav"
+import Button from "./components/Button"
+import TextImage from "./components/TextImage"
+import BobaImage from "../public/Images/BobaTea.jpg"
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen w-screen bg-orange-100">
+    <div className="flex flex-col h-[100%] w-screen bg-orange-100">
       <div className="">
         <Nav />
       </div>
       <div className="flex flex-col items-center bg-orange-300">
         <h1 className="font-inknut text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
         <p className="font-inter text-[#757575] text-[1.5em] font-bold">the first boba cat cafe in davis</p>
-        <div className="flex justify-center w-[12rem] bg-[#FFB7CE] p-3 rounded-[0.25em] text-black font-bold m-10">Explore our Drinks!</div>
+        <Button buttontxt="Explore our Drinks!"/>
       </div>
-      <div>
-        boo
+      <div className="flex justify-center text-center items-center text-black">
+        Image Carosell
+      </div>
+      <div className="flex flex-col items-center">
+        
+        <TextImage 
+        head="What is Purrlicious?" 
+        content="At Purrlicious, we serve affordable, high-quality boba tea and offer experiences with our adorable kittens."
+        buttontxt="Learn More about Us"
+        image={BobaImage.src}
+        orientation={0}
+        fontSize={2}/>
+
+        <TextImage 
+        head="Want to stay in the loop?" 
+        content="Sign up to get updates of when you can find us at festivals and events!"
+        buttontxt="Join our Newsletters"
+        image={BobaImage.src}
+        orientation={1}
+        fontSize={2}/>
       </div>
     </div>
   );
