@@ -5,7 +5,7 @@ import BobaImage from "../public/Images/BobaTea.jpg"
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-[100%] w-screen bg-orange-100">
+    <div className="flex flex-col h-[100%] w-[100%] bg-orange-100">
       <div className="">
         <Nav />
       </div>
@@ -25,7 +25,7 @@ export default function Home() {
         buttontxt="Learn More about Us"
         image={BobaImage.src}
         orientation={0}
-        fontSize={2}/>
+        fontSize={"1.8"}/>
 
         <TextImage 
         head="Want to stay in the loop?" 
@@ -33,7 +33,7 @@ export default function Home() {
         buttontxt="Join our Newsletters"
         image={BobaImage.src}
         orientation={1}
-        fontSize={2}/>
+        fontSize={"1.8"}/>
       </div>
     </div>
   );
