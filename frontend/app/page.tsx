@@ -1,4 +1,5 @@
 import Nav from "./components/Nav"
+import Footer from "./components/Footer"
 import Button from "./components/Button"
 import TextImage from "./components/TextImage"
 import BobaImage from "../public/Images/BobaTea.jpg"
@@ -30,10 +31,13 @@ export default function Home() {
         <TextImage 
         head="Want to stay in the loop?" 
         content="Sign up to get updates of when you can find us at festivals and events!"
-        buttontxt="Join our Newsletters"
+        buttontxt="Join our Newsletter"
         image={BobaImage.src}
         orientation={1}
         fontSize={"1.8"}/>
+      </div>
+      <div className="mt-auto w-full">
+        <Footer />
       </div>
     </div>
   );
