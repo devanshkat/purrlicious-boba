@@ -13,11 +13,13 @@ interface TextImageProps {
 const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, orientation, fontSize}) => {
 
     return (
-        <div className={`flex justify-center items-center m-5 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
-            <img className=" w-[35%] h-[35%]" src={image}/>
+        <div className={`flex justify-evenly items-center  m-5 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
+            <img className=" w-[30rem] h-[30rem]" src={image}/>
+            <div className=''></div>
             <div className='flex flex-col justify-center items-center w-[50%]  '>
-                <h1 className={`text-[2rem] font-bold text-black`}>{head}</h1>
-                <p className='flex justify-cent text-center text-black text-[1.4em] w-[60%]'>{content}</p>
+                <h1 className={`text-[2rem] text-center font-bold text-black`}>{head}</h1>
+                
+                <p className='flex text-center text-black text-[1.4rem] w-[60%]'>{content}</p>
                 <Button buttontxt={buttontxt}/>
             </div>
             

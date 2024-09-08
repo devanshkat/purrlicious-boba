@@ -11,7 +11,7 @@ export default function Home() {
         <Nav />
       </div>
       <div className="flex flex-col items-center bg-orange-300">
-        <h1 className="font-inknut text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
+        <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
         <p className="font-inter text-[#757575] text-[1.5em] font-bold">the first boba cat cafe in davis</p>
         <Button buttontxt="Explore our Drinks!"/>
       </div>
