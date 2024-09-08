@@ -2,7 +2,7 @@ import React from 'react';
 import Employee from './Employee';
 
 interface EmployeeListProps {
-    emList: Array<Object>;
+    emList: Array<Employee>;
 }
 
 const EmployeeList : React.FC<EmployeeListProps> = ({emList}) => {

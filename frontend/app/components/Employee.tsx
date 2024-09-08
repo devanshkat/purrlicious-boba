@@ -7,7 +7,7 @@ interface Employee {
     Desc: string;
 }
 interface EmployeeProps {
-    emp: Object;
+    emp: Employee;
 }
 
 
