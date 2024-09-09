@@ -24,7 +24,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
                 className="relative w-full h-full transition-transform duration-700 ease-in-out"
                 style={{
                     transformStyle: 'preserve-3d',
-                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    transform: isFlipped ? 'rotateX(180deg)' : 'rotateX(0deg)',
                 }}
             >
                 {/* front */}
@@ -50,7 +50,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
                     text-black bg-white rounded-[4em] h-full w-full
                     hover:bg-pink-300 hover:text-white"
                     style={{
-                        transform: 'rotateY(180deg)',
+                        transform: 'rotateX(180deg)',
                         backfaceVisibility: 'hidden', 
                     }}
                 >
