@@ -14,7 +14,7 @@ const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, 
 
     return (
         <div className={`flex min-w-full justify-evenly  m-5 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
-            <img className=" w-[55%] h-[70%]" src={image}/>
+            <img className=" w-[100vmin] h-[75vmin]" src={image}/>
             <div className=''></div>
             <div className='flex flex-col justify-center items-center w-[50%]  '>
                 <h1 className={`text-[6vmin] text-center font-bold text-black`}>{head}</h1>
