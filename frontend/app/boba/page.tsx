@@ -1,6 +1,5 @@
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import SearchNav from "./components/Nav";
 import BobaCard from './components/BobaCard';
 import boba1 from "../../public/Images/BobaTea.jpg"
 
