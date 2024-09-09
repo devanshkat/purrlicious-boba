@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button : React.FC<ButtonProps> = ({buttontxt}) => {
   return (
-    <div className="flex justify-center w-[12rem] bg-[#FFB7CE] p-3 rounded-[0.25em] text-black font-bold m-5 transition-rotate transition-colors duration-500 ease-in-out hover:bg-orange-400 hover:text-white cursor-pointer">{buttontxt}</div>
+    <div className="flex justify-center items-center text-[1.2rem] text-center w-[15rem] h-[4rem] bg-[#FFB7CE] p-3 rounded-[0.25em] text-black font-bold m-5 transition-rotate transition-colors duration-500 ease-in-out hover:bg-orange-400 hover:text-white cursor-pointer">{buttontxt}</div>
   );
 };
 
