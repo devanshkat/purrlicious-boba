@@ -1,7 +1,8 @@
 "use client";
 
 import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs"
-import {useState} from "react"
+import {useState, useEffect} from "react"
+import next from "next";
 interface ImageData {
     src: string;
     alt: string;
@@ -23,6 +24,13 @@ const Carosell : React.FC<CarosellProps> = ({data}) => {
     const previousSlide = () => {
         setSlide(slide == 0 ? data.length-1 : slide - 1);
     }
+
+    useEffect(() => {
+        const intId = setInterval(nextSlide, 3000);
+        return () => clearInterval(intId)
+    })
+
+
     return (
         <div className="flex justify-center items-center w-[50%] h-[35rem] relative m-5">
             <BsArrowLeftCircleFill className="absolute w-[2rem] h-[2rem] bg-white left-1 filter drop-shadow hover:cursor-pointer" onClick={previousSlide}/>
