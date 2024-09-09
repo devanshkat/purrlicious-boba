@@ -2,7 +2,7 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 
 
-export default function OurBobaPage() {
+export default function ContactPage() {
     return (
     <div className="flex flex-col min-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
       <div className="">
