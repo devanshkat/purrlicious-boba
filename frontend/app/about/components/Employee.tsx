@@ -13,7 +13,7 @@ interface EmployeeProps {
 
 const Employee : React.FC<EmployeeProps> = ({emp}) => {
   return (
-    <div className="flex max-w-[20em] max-h-[40em] w-auto h-auto flex flex-col bg-white p-[2em] m-2">
+    <div className="flex max-w-[20em] max-h-[40em] shadow-lg rounded-[0.5em] w-auto h-auto flex flex-col bg-white p-[2em] m-2">
         <div className='m-2'>
             <img src={emp.Image} width={"150rem"} height={"150rem"}/>
         </div>

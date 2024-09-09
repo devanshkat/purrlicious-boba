@@ -3,10 +3,41 @@ import Footer from "./components/Footer"
 import Button from "./components/Button"
 import TextImage from "./components/TextImage"
 import BobaImage from "../public/Images/BobaTea.jpg"
+import Carosell from "./components/Carosell"
+import img1 from "../public/Images/Carousel1.png"
+import img2 from "../public/Images/Carousel2.png"
+import img3 from "../public/Images/Carousel3.png"
+import img4 from "../public/Images/Carousel4.png"
+import {useState} from "react"
+// import img5 from "../public/Images/Carousel5.png"
 
 export default function Home() {
+
+  let carosellData = [
+    {
+      src: img1.src,
+      alt: "Image 1"
+    },
+    {
+      src: img2.src,
+      alt: "Image 2"
+    },
+    {
+      src: img3.src,
+      alt: "Image 3"
+    },
+    {
+      src: img4.src,
+      alt: "Image 4"
+    },
+    // {
+    //   src: img5.src,
+    //   alt: "Image 5"
+    // }
+  ]
+
   return (
-    <div className="flex flex-col h-[100%] w-[100%] bg-orange-100">
+    <div className="flex flex-col min-w-screen min-h-screen h-[100%] w-[100%] bg-orange-100">
       <div className="">
         <Nav />
       </div>
@@ -16,7 +47,7 @@ export default function Home() {
         <Button buttontxt="Explore our Drinks!"/>
       </div>
       <div className="flex justify-center text-center items-center text-black">
-        Image Carosell
+        <Carosell data={carosellData}/>
       </div>
       <div className="flex flex-col items-center">
         
