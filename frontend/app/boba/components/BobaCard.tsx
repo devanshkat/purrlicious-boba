@@ -29,7 +29,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
             >
                 {/* front */}
                 <div
-                    className="absolute inset-0 flex flex-col p-8 items-center text-center shadow-md text-black bg-white rounded-[4em] h-full w-full
+                    className="absolute inset-0 flex flex-col p-8 items-center text-center shadow-md transition-all duration-300 ease-in-out text-black bg-white rounded-[4em] h-full w-full
                     hover:bg-pink-300 hover:text-white"
                     style={{
                         backfaceVisibility: 'hidden', 
@@ -46,7 +46,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
 
                 {/* back */}
                 <div
-                    className="absolute inset-0 flex flex-col p-8 items-center text-center shadow-md 
+                    className="absolute inset-0 flex flex-col p-8 transition-all duration-300 ease-in-out items-center text-center shadow-md 
                     text-black bg-white rounded-[4em] h-full w-full
                     hover:bg-pink-300 hover:text-white"
                     style={{
