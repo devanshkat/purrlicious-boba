@@ -11,7 +11,7 @@ const Nav = () => {
         <div className=""><Link href={"/about"}>About Us</Link></div>
         <div className=""><Link href={"/boba"}>Our Boba</Link></div>
         <div className=""><Link href={"/contact"}>Contact Us</Link></div>
-        <div className="bg-[#FFB7CE] pt-[0.2rem] pb-[0.2rem] pl-[0.5rem] pr-[0.5rem] rounded-3xl">Join Our Newsletter</div>
+        <div className="bg-[#FFB7CE] pt-[0.2rem] pb-[0.2rem] pl-[0.5rem] pr-[0.5rem] rounded-3xl"><Link href={"/newsletter"}>Join Our Newsletter</Link></div>
       </div>
     </div>
   );
