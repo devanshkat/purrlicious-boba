@@ -1,3 +1,4 @@
+"use client"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import BobaCard from './components/BobaCard';
@@ -15,11 +16,11 @@ export default function OurBobaPage() {
       </div>
 
       <div className="flex flex-row flex-wrap justify-center items-center">
-        <BobaCard name="Thai Milk Tea" price="5.00" imageloc={boba1.src}></BobaCard>
-        <BobaCard name="Thai Green Tea" price="5.00" imageloc={boba1.src}></BobaCard>
-        <BobaCard name="Taro Milk Tea" price="5.00" imageloc={boba1.src}></BobaCard>
-        <BobaCard name="Strawberry Milk Tea" price="5.00" imageloc={boba1.src}></BobaCard>
-        <BobaCard name="Ube Milk Tea" price="5.00" imageloc={boba1.src}></BobaCard>
+        <BobaCard name="Thai Milk Tea" price="5.00" imageloc={boba1.src} description= "Thai Milk"></BobaCard>
+        <BobaCard name="Thai Green Tea" price="5.00" imageloc={boba1.src} description= "Thai Green"></BobaCard>
+        <BobaCard name="Taro Milk Tea" price="5.00" imageloc={boba1.src} description= "Taro"></BobaCard>
+        <BobaCard name="Strawberry Milk Tea" price="5.00" imageloc={boba1.src} description= "Strawberry"></BobaCard>
+        <BobaCard name="Ube Milk Tea" price="5.00" imageloc={boba1.src} description= "Ube"></BobaCard>
       </div>
     
       <div className="mt-auto h-full w-full">
