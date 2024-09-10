@@ -8,9 +8,10 @@ interface TextImageProps {
     image: string;
     orientation: number;
     fontSize: string;
+    page: string;
 }
 
-const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, orientation, fontSize}) => {
+const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, orientation, fontSize, page}) => {
 
     return (
         <div className={`flex min-w-full justify-evenly  m-5 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
@@ -20,7 +21,7 @@ const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, 
                 <h1 className={`text-[6vmin] text-center font-bold text-black`}>{head}</h1>
                 
                 <p className='flex text-center text-black text-[3vmin] w-[60%]'>{content}</p>
-                <Button buttontxt={buttontxt}/>
+                <Button buttontxt={buttontxt} page={page}/>
             </div>
             
         </div>

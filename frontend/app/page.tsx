@@ -46,7 +46,7 @@ export default function Home() {
       <div className="flex flex-col items-center bg-orange-300">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
         <p className="font-inter text-[#757575] text-[1.5em] font-bold">the first boba cat cafe in davis</p>
-        <Button buttontxt="Explore our Drinks!"/>
+        <Button buttontxt="Explore our Drinks!" page="/boba"/>
       </div>
       <div className="flex justify-center text-center items-center text-black">
         <Carosell data={carosellData}/>
@@ -57,6 +57,7 @@ export default function Home() {
         head="What is Purrlicious?" 
         content="At Purrlicious, we serve affordable, high-quality boba tea and offer experiences with our adorable kittens."
         buttontxt="Learn More about Us"
+        page="/about"
         image={Cat1.src}
         orientation={0}
         fontSize={"1.8"}/>
@@ -65,6 +66,7 @@ export default function Home() {
         head="Want to stay in the loop?" 
         content="Sign up to get updates of when you can find us at festivals and events!"
         buttontxt="Join our Newsletter"
+        page="/newsletter"
         image={Cat2.src}
         orientation={1}
         fontSize={"1.8"}/>
