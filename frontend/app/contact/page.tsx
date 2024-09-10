@@ -18,7 +18,7 @@ export default function ContactPage() {
 
       <div className="flex flex-row items-center m-[10rem] justify-center gap-[15rem]">
         <img src={Logo.src} alt="Logo" width={"440rem"} height={"440rem"}/>
-        <ContactForm></ContactForm>
+        <ContactForm/>
       </div>
       
       <div className="mt-auto h-full w-full">
