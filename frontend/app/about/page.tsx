@@ -83,7 +83,7 @@ export default function AboutPage() {
         one boba and one purr at a time."
         image={Cat1.src}
         orientation={0}
-        fontSize={"10"}/>
+        fontSize={"3"}/>
 
         <TextImage 
         content="Purrlicious Boba started from our love for both cats and boba. As a college students majoring in 
@@ -92,7 +92,7 @@ export default function AboutPage() {
         into a full cat café, where customers can enjoy their favorite drinks while relaxing with furry friends."
         image={Cat2.src}
         orientation={1}
-        fontSize={"2"}/>
+        fontSize={"3"}/>
 
       </div>
 
