@@ -11,12 +11,12 @@ export default function ContactPage() {
         <Nav showTitle={true}/>
       </div>
 
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center p-4 mt-40">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Contact Us</h1>
         <h2 className="font-inknut text-center text-[#2C2C2C] text-[2em] font-regular">For Business Inquiries: Catering, Events, and More</h2>
       </div>
 
-      <div className="flex flex-row items-center m-[10rem] justify-center gap-[15rem]">
+      <div className="flex flex-row items-center m-[4rem] justify-center gap-[15rem]">
         <img src={Logo.src} alt="Logo" width={"440rem"} height={"440rem"}/>
         <ContactForm/>
       </div>

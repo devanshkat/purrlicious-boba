@@ -12,7 +12,7 @@ export default function NewsletterPage() {
         <Nav showTitle={true}/>
       </div>
 
-      <div className="flex flex-col items-center p-4 space-y-6">
+      <div className="flex flex-col items-center p-4 space-y-6 mt-40">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Join our Newsletter</h1>
         <img src={Table.src} alt="" width={"650px"}></img>
       </div>

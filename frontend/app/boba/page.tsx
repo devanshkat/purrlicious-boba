@@ -10,7 +10,7 @@ export default function OurBobaPage() {
       <div className="">
         <Nav showTitle={true}/>
       </div>
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center p-4 mt-36">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Our Boba</h1>
         <p className="text-[#757575] text-[1.6em]">Explore our selection</p>
       </div>

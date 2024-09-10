@@ -13,7 +13,7 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({showTitle}) => {
   // const [showTitle, setShowTitle] = useState(false);
-  console.log(showTitle)
+  // console.log(showTitle)
   return (
     <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-4 top-0 w-full h-1/8">
       <div className='flex flex-row items-center justify-center'>

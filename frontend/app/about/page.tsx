@@ -65,11 +65,11 @@ export default function AboutPage() {
 
     return (
     <div className="flex flex-col h-full min-w-screen w-full bg-[#FED8B1]">
-      <div className="">
+      <div className="mb-5">
       <Nav showTitle={true}/>
       </div>
 
-      <div className="flex flex-col items-center pt-10">
+      <div className="flex flex-col items-center mt-40">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">About Us</h1>
       </div>
       
