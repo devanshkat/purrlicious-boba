@@ -4,6 +4,8 @@ import Button from "../components/Button"
 import EmployeeList from "./components/EmployeeList"
 import Cat1 from "../../public/Images/purrlicious_cats_1.png"
 import Cat2 from "../../public/Images/purrlicious_cats_2.png"
+import Pusheen from "../../public/Images/pusheen.png"
+import CharChar from "../../public/Images/char-char.png"
 import defaultImage from "../../public/Images/PLogo.png"
 
 
@@ -11,14 +13,40 @@ export default function AboutPage() {
 
     let employeeList= [
         {
-            "Image": defaultImage.src,
-            "Title": "Manager",
+            "Image": Pusheen.src,
+            "Name": "Pusheen",
+            "Title": "Pawblic Relations Officer",
+            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
+            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
+        },
+        {
+            "Image": CharChar.src,
+            "Name": "Char-Char",
+            "Title": "Chief Furnancial Officer",
             "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
             et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
         },
         {
             "Image": defaultImage.src,
+            "Name": "Lynn Prasai",
+            "Title": "Co-founder",
+            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
+            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
+        },
+        {
+            "Image": defaultImage.src,
+            "Name": "Alex",
+            "Title": "Cofounder",
+            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
+            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
+        },
+        {
+            "Image": defaultImage.src,
+            "Name": "John Doe",
             "Title": "Employee",
             "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
             et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
@@ -26,27 +54,7 @@ export default function AboutPage() {
         },
         {
             "Image": defaultImage.src,
-            "Title": "CEO",
-            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
-        },
-        {
-            "Image": defaultImage.src,
-            "Title": "Employee",
-            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
-        },
-        {
-            "Image": defaultImage.src,
-            "Title": "Hiring Manager",
-            "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.`
-        },
-        {
-            "Image": defaultImage.src,
+            "Name": "John Doe",
             "Title": "Employee",
             "Desc": `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
             et dolore magna aliqua.,Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
@@ -66,14 +74,14 @@ export default function AboutPage() {
 
       {/* Images */}
 
-      <div className="flex flex-row items-center justify-between p-10 w-full max-w-6xl mx-auto">
+      <div className="flex flex-row items-center justify-between p-3 w-full max-w-6xl mx-auto">
         <img src={Cat1.src} alt="" width={"512rem"} height={"800rem"} />
         <img src={Cat2.src} alt="" width={"512px"} height={"350px"}/>
       </div>
       
       {/* Employee Page */}
       
-      <div className="flex flex-col items-center justify-center p-10 w-full max-w-6xl mx-auto">
+      <div className="flex flex-col items-center justify-center p-5 w-full max-w-6xl mx-auto">
         <EmployeeList emList={employeeList}/>
       </div>
       

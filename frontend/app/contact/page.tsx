@@ -1,7 +1,7 @@
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Logo from "../../public/Images/PLogo.png";
-import ContactForm from "../components/ContactForm"
+import ContactForm from "./components/ContactForm"
 
 
 export default function ContactPage() {

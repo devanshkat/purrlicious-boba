@@ -3,6 +3,7 @@ import Logo from "../../public/Images/PLogo.png";
 
 interface Employee {
     Image: string;
+    Name: string;
     Title: string;
     Desc: string;
 }
@@ -13,9 +14,12 @@ interface EmployeeProps {
 
 const Employee : React.FC<EmployeeProps> = ({emp}) => {
   return (
-    <div className="flex max-w-[20em] max-h-[40em] shadow-lg rounded-[0.5em] w-auto h-auto flex flex-col bg-white p-[2em] m-2">
+    <div className="flex max-w-[20em] max-h-[40em] shadow-lg rounded-[0.5em] justify-center items-center w-auto h-auto flex flex-col bg-white p-[2em] m-2">
         <div className='m-2'>
-            <img src={emp.Image} width={"150rem"} height={"150rem"}/>
+            <img className="rounded-[0.5em]" src={emp.Image} width={"175rem"} height={"175rem"}/>
+        </div>
+        <div className="text-xl text-black font-bold m-1 ">
+            {emp.Name}
         </div>
         <div className='text-black font-bold m-1'>
             {emp.Title}
