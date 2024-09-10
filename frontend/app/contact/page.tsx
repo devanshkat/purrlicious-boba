@@ -8,7 +8,7 @@ export default function ContactPage() {
     return (
     <div className="flex flex-col min-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
       <div className="">
-        <Nav />
+        <Nav showTitle={true}/>
       </div>
 
       <div className="flex flex-col items-center p-4">

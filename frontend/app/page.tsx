@@ -1,3 +1,5 @@
+"use client"; 
+import {useState, useEffect} from "react"
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
 import Button from "./components/Button"
@@ -10,10 +12,27 @@ import img1 from "../public/Images/Carousel1.png"
 import img2 from "../public/Images/Carousel2.png"
 import img3 from "../public/Images/Carousel3.png"
 import img4 from "../public/Images/Carousel4.png"
-import {useState} from "react"
 // import img5 from "../public/Images/Carousel5.png"
 
 export default function Home() {
+
+  const [title, setShowTitle] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window != undefined) {
+        const position = window.scrollY;
+        setScrollPosition(position);
+        if (position >= 248) {
+          setShowTitle(true);
+        }
+        else {
+          setShowTitle(false);
+        }
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+  }, []);
 
   let carosellData = [
     {
@@ -40,13 +59,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-w-screen min-h-screen h-[100%] w-[100%] bg-orange-100">
-      <div className="">
-        <Nav />
-      </div>
+        
       <div className="flex flex-col items-center bg-orange-300">
-        <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
-        <p className="font-inter text-[#757575] text-[1.5em] font-bold">the first boba cat cafe in davis</p>
-        <Button buttontxt="Explore our Drinks!" page="/boba"/>
+        <Nav showTitle={title}/>
+        <div className="mt-[10em] flex flex-col items-center">
+          <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">Purrlicious Boba</h1>
+          <p className="font-inter text-[#757575] text-[1.5em] font-bold">the first boba cat cafe in davis</p>
+          <Button buttontxt="Explore our Drinks!" page="/boba"/>
+        </div>
+       
       </div>
       <div className="flex justify-center text-center items-center text-black">
         <Carosell data={carosellData}/>
