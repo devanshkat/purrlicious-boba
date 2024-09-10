@@ -18,8 +18,8 @@ const EmployeeList : React.FC<EmployeeListProps> = ({emList}) => {
         to bring joy to others through delicious boba drinks and the companionship of cats. Our ultimate goal is to expand Purrlicious Boba 
         into a full cat café, where customers can enjoy their favorite drinks while relaxing with furry friends. <br></br>
       </div> */}
-      <div className="flex flex-row items-center justify-center text-[4rem] font-bold text-black pb-5">Our Team</div>
-      <div className="flex flex-row flex-wrap justify-center items-center max-w-full">
+      <div className="flex flex-row items-center justify-center text-[4rem] font-bold text-center text-black pb-5">Our Team</div>
+      <div className="transition-all duration-500 ease-in-out flex flex-row flex-wrap justify-center items-center max-w-full">
         {
             emList.map((employee, index) => (
                 <Employee key={index} emp={employee}/>
