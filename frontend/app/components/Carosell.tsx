@@ -32,7 +32,7 @@ const Carosell : React.FC<CarosellProps> = ({data}) => {
 
 
     return (
-        <div className="flex justify-center items-center w-[50%] h-[35rem] relative m-5">
+        <div className="flex justify-center items-center w-[30vw] h-[45rem] relative m-5">
             <BsArrowLeftCircleFill className="absolute w-[2rem] h-[2rem] text-white left-1 filter drop-shadow hover:cursor-pointer bg-black rounded-[100%]" onClick={previousSlide}/>
             {data.map((item,idx) => {
                 return <img className={slide === idx ? "rounded-[0.5em] shadow w-[100%] h-[100%]" : "hidden"} src={item.src} alt={item.alt} key={idx}/>
