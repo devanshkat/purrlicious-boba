@@ -14,7 +14,7 @@ interface EmployeeProps {
 
 const Employee : React.FC<EmployeeProps> = ({emp}) => {
   return (
-    <div className="flex max-w-[20em] max-h-[40em] shadow-lg rounded-[0.5em] justify-center items-center w-auto h-auto flex flex-col bg-white p-[2em] m-2">
+    <div className="flex max-w-[20em] max-h-[40em] shadow-xl rounded-[0.5em] justify-center items-center w-auto h-auto flex flex-col bg-white p-[2em] m-2">
         <div className='m-2'>
             <img className="rounded-[0.5em]" src={emp.Image} width={"175rem"} height={"175rem"}/>
         </div>

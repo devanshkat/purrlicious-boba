@@ -105,7 +105,7 @@ export default function AboutPage() {
       
       {/* Employee Page */}
       
-      <div className="flex flex-col items-center justify-center p-5 w-full max-w-6xl mx-auto">
+      <div className="flex flex-col items-center justify-center p-5 w-full max-w-screen mx-auto">
         <EmployeeList emList={employeeList}/>
       </div>
       
