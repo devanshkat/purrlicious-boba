@@ -5,9 +5,10 @@ interface BobaProps {
     price: string;
     imageloc: string;
     description: string;
+    fontSize: number
 }
 
-const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) => {
+const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fontSize }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -17,7 +18,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
     return (
         <div
             onClick={handleFlip}
-            className="relative w-[30em] h-[36em] m-4 cursor-pointer"
+            className="relative w-[25em] h-[35em] m-4 cursor-pointer"
             style={{ perspective: '1000px' }} 
         >
             <div
@@ -40,8 +41,8 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description }) =
                         alt={name}
                         className="object-cover h-[128em] w-[72em] mb-4 rounded-[2em]"
                     />
-                    <p className="font-bold text-[2em]">{name}</p>
-                    <p className="font-bold text-[2em]">${price}</p>
+                    <p className={`font-bold text-[${fontSize}em]`}>{name}</p>
+                    <p className="font-bold text-[1em]">${price}</p>
                 </div>
 
                 {/* back */}
