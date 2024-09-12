@@ -8,6 +8,7 @@ import BobaImage from "../public/Images/BobaTea.jpg"
 import Cat1 from "../public/Images/purrlicious_cats_2.png"
 import Cat2 from "../public/Images/purrlicious_cats_1.png"
 import Carosell from "./components/Carosell"
+import Events from "./components/Events"
 import img1 from "../public/Images/Carousel1.png"
 import img2 from "../public/Images/Carousel2.png"
 import img3 from "../public/Images/Carousel3.png"
@@ -71,6 +72,9 @@ export default function Home() {
       </div>
       <div className="flex justify-center text-center items-center text-black">
         <Carosell data={carosellData}/>
+      </div>
+      <div>
+        <Events/>
       </div>
       <div className="flex flex-col items-center m-10 ">
         
