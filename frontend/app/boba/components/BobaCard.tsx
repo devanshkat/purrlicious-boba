@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import clsx from "clsx";
 
 interface BobaProps {
     name: string;
     price: string;
     imageloc: string;
     description: string;
-    fontSize: number
+    fontSize: number;
+    color: string;
 }
 
-const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fontSize }) => {
+const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fontSize, color }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -30,10 +32,21 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fon
             >
                 {/* front */}
                 <div
-                    className="absolute inset-0 flex flex-col p-8 items-center text-center shadow-md transition-all duration-300 ease-in-out text-black bg-white rounded-[4em] h-full w-full
-                    hover:bg-pink-300 hover:text-white"
+                    className={
+                        clsx(
+                            "absolute inset-0 flex flex-col p-8 items-center text-center shadow-md transition-all duration-300 ease-in-out text-black bg-white rounded-[4em] h-full w-full",
+                            {
+                              "hover:bg-thai-milk-tea": color === "thai-milk-tea",
+                              "hover:bg-thai-green-tea": color === "thai-green-tea",
+                              "hover:bg-taro-milk-tea": color === "taro-milk-tea",
+                              "hover:bg-mango-green-tea": color === "mango-green-tea",
+                              "hover:bg-strawberry-green-tea": color === "strawberry-green-tea",
+                              "hover:bg-ube-milk-tea": color === "ube-milk-tea",
+                            },
+                            "hover:text-white"
+                          )}
                     style={{
-                        backfaceVisibility: 'hidden', 
+                        backfaceVisibility: 'hidden',
                     }}
                 >
                     <img
@@ -47,9 +60,19 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fon
 
                 {/* back */}
                 <div
-                    className="absolute inset-0 flex flex-col p-8 transition-all duration-300 ease-in-out items-center text-center shadow-md 
-                    text-black bg-white rounded-[4em] h-full w-full
-                    hover:bg-pink-300 hover:text-white"
+                    className={
+                    clsx(`absolute inset-0 flex flex-col p-8 transition-all duration-300 ease-in-out items-center text-center shadow-md 
+                        text-black bg-white rounded-[4em] h-full w-full`,
+                        {
+                            "hover:bg-thai-milk-tea": color === "thai-milk-tea",
+                              "hover:bg-thai-green-tea": color === "thai-green-tea",
+                              "hover:bg-taro-milk-tea": color === "taro-milk-tea",
+                              "hover:bg-mango-green-tea": color === "mango-green-tea",
+                              "hover:bg-strawberry-green-tea": color === "strawberry-green-tea",
+                              "hover:bg-ube-milk-tea": color === "ube-milk-tea",
+                        },
+                        `hover:text-white`
+                        )}
                     style={{
                         transform: 'rotateX(180deg)',
                         backfaceVisibility: 'hidden', 
