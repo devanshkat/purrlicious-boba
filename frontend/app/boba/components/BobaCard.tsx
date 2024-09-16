@@ -20,7 +20,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fon
     return (
         <div
             onClick={handleFlip}
-            className="relative w-[25em] h-[35em] m-4 cursor-pointer"
+            className="relative  w-[20em] h-[10em] xl:w-[25em] xl:h-[35em] m-4 cursor-pointer"
             style={{ perspective: '1000px' }} 
         >
             <div
@@ -34,7 +34,7 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fon
                 <div
                     className={
                         clsx(
-                            "absolute inset-0 flex flex-col p-8 items-center text-center shadow-md transition-all duration-300 ease-in-out text-black bg-white rounded-[4em] h-full w-full",
+                            "absolute inset-0 flex justify-between flex-row xl:flex-col p-3 items-center text-center shadow-md transition-all duration-300 ease-in-out text-black bg-white rounded-[2.5em] xl:rounded-[4em] h-full w-full",
                             {
                               "hover:bg-thai-milk-tea": color === "thai-milk-tea",
                               "hover:bg-thai-green-tea": color === "thai-green-tea",
@@ -49,13 +49,19 @@ const BobaCard: React.FC<BobaProps> = ({ name, price, imageloc, description, fon
                         backfaceVisibility: 'hidden',
                     }}
                 >
+                    <div>
+                        
+                    </div>
                     <img
                         src={imageloc}
                         alt={name}
-                        className="object-cover h-[128em] w-[72em] mb-4 rounded-[2em]"
+                        className="m-1 object-cover h-[8rem] w-[8rem] rounded-[2.5em] xl:h-[35rem] w-[25rem]  xl:rounded-[3.5em]"
                     />
-                    <p className={`font-bold text-[${fontSize}em]`}>{name}</p>
-                    <p className="font-bold text-[1em]">${price}</p>
+                    <div className="m-1 flex-col">
+                        <p className={`font-bold text-[1.35em] xl:text-[1.7em]`}>{name}</p>
+                        <p className="font-bold text-grey-500 text-[0.8em]">${price}</p>
+                    </div>
+                    
                 </div>
 
                 {/* back */}
