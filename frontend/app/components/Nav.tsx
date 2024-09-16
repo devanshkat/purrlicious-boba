@@ -21,7 +21,9 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
         <img className="rounded-[3.5rem]" src={Logo.src} alt="Logo" width={"110rem"} height={"110rem"}/>
         </Link>
         <div className={`transition-all duration-500 ease-in-out transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
+          <Link href={"/"}>
           <h1 className="ml-5 font-inknut text-center text-black text-[3vmin] font-bold">Purrlicious Boba</h1>
+          </Link>
         </div>
       </div>
       
