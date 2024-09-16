@@ -25,7 +25,7 @@ export default function OurBobaPage() {
         <BobaCard name="Thai Green Tea" color="thai-green-tea" price="5.00" imageloc={green.src} description= "Ingredients: Water, Sugar, Thai Green Tea Mix (Green Tea, Food Coloring [Blue 1, Yellow 5]), Sweetened Condensed Milk (Milk, Sugar), Evaporated Milk (Milk, Dipotassium Phosphate, Carrageenan, Vitamin D3), Half-and-Half (Milk, Cream), Natural and Artificial Flavorings" fontSize={1.7}></BobaCard>
         <BobaCard name="Taro Milk Tea" color="taro-milk-tea" price="5.00" imageloc={taro.src} description= "Sweetended taro non-dairy creamer powder (sugar, glucose syrup, Hydrogenated palm kernel oil, Whey (milk), Taro powder, artificial flavors, maltodextrin, sodium caseinate, silicon dioxide, Dipotassium phosphate, tripotassium phosphate, mono & diglyceride, sodium tripolyphosphate, diacetyl tartaric acid esters of mono & diglycerides (Datem), Beta carotene (color), suctalose, blue 1, red 3, red 40." fontSize={1.7}></BobaCard>
         <BobaCard name="Mango Green Tea" color="mango-green-tea" price="5.00" imageloc={mango.src} description= "Mango" fontSize={1.7}></BobaCard>
-        <BobaCard name="Strawberry Green Tea" color="strawberry-green-tea" price="5.00" imageloc={strawberry.src} description= "Strawberry" fontSize={1.6}></BobaCard>
+        <BobaCard name="Strawberry Green Tea" color="strawberry-green-tea" price="5.00" imageloc={strawberry.src} description= "Strawberry" fontSize={1.7}></BobaCard>
         <BobaCard name="Ube Milk Tea" color="ube-milk-tea" price="5.00" imageloc={ube.src} description= "Ube" fontSize={1.7}></BobaCard>
       </div>
     
