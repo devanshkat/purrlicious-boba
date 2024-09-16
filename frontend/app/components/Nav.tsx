@@ -18,11 +18,11 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
     <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-4 top-0 w-full h-1/8">
       <div className='flex flex-row items-center justify-center'>
         <Link href={"/"}>
-        <img className="rounded-[3.5rem]" src={Logo.src} alt="Logo" width={"110rem"} height={"110rem"}/>
+        <img className="rounded-[3.5rem] ml-3" src={Logo.src} alt="Logo" width={"75rem xl: 110rem"} height={"75rem xl: 110rem"}/>
         </Link>
         <div className={`transition-all duration-500 ease-in-out transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
           <Link href={"/"}>
-          <h1 className="ml-5 font-inknut text-center text-black text-[3vmin] font-bold">Purrlicious Boba</h1>
+          <h1 className="ml-3 font-inknut text-center text-black text-[2vmin xl: 3vmin] font-bold">Purrlicious Boba</h1>
           </Link>
         </div>
       </div>
