@@ -5,7 +5,7 @@ import Link from "next/link"
 interface ButtonProps {
     buttontxt: string;
     page: string;
-    onClick: Function;
+    onClick: any;
 }
 
 const Button : React.FC<ButtonProps> = ({buttontxt, page, onClick}) => {

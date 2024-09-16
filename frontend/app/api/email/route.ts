@@ -39,17 +39,20 @@ export async function GET() {
   });
 }
 
-
+interface SecretString {
+    accessKey: string;
+    secretAccessKey: string;
+}
 
 export async function POST(req: Request) {
     const projectId = "2f93382f28414322a4a88be1090b4b15";
     const secret = await getResp();
-    const {accessKey, secretAccessKey} = secret.SecretString
+    const secretString: any = secret.SecretString;
 
     const pinpoint = new AWS.Pinpoint({
         region: "us-east-2",
-        accessKeyId: accessKey,
-        secretAccessKey: secretAccessKey
+        accessKeyId: secretString.accessKey,
+        secretAccessKey: secretString.secretAccessKey
     })
 
 
