@@ -19,8 +19,13 @@ export default function NewsletterPage() {
       })
     }
 
+<<<<<<< Updated upstream
     return (
     <div className="flex flex-col min-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
+=======
+  return (
+    <div className="flex flex-col min-w-screen min-h-screen w-screen h-auto bg-[#FED8B1]">
+>>>>>>> Stashed changes
       <div className="">
         <Nav showTitle={true}/>
       </div>

@@ -27,22 +27,9 @@ import {
     } catch (error) {
         throw error;
     }
-    }
-  
-  
-  
-
-
-export async function GET() {
-  return NextResponse.json({
-    users: ["Billy", "Dev", "Abs", "Rasp", "Ada", "Shrev"],
-  });
 }
 
-interface SecretString {
-    accessKey: string;
-    secretAccessKey: string;
-}
+
 
 export async function POST(req: Request) {
     const projectId = "2f93382f28414322a4a88be1090b4b15";
@@ -55,9 +42,20 @@ export async function POST(req: Request) {
         secretAccessKey: secretString.secretAccessKey
     })
 
+    async function getEndpoint(params: any) {
+        try {
+          const data = await pinpoint.getEndpoint(params).promise();
+          console.log('Endpoint information:', data);
+          console.log('OptOut status:', data.EndpointResponse.OptOut); // Check the OptOut status
+        } catch (err) {
+          console.error('Error fetching endpoint information:', err);
+        }
+      }
+
 
     try {
         const {email} = await req.json();
+        console.log(email)
         console.log("SUCCESS")
         console.log(email);
         
@@ -68,21 +66,20 @@ export async function POST(req: Request) {
             EndpointRequest: {
               Address: email,
               ChannelType: "EMAIL",
-              OptOut: "NONE", // Opt-in status for the email
+              OptOut: "ALL", // Opt-out status for the email
               Attributes: {
-                signUpSource: ["web-form"], // Custom attribute: sign-up source
-                subscribed: ["yes"],
-              },
-              User: {
-                UserAttributes: {
-                  email: [email],
-                }
+                unsubSource: ["web-form"], // Custom attribute: sign-up source
+                subscribed: ["no"],
+                email: [email]
               },
               Demographic: {
                 Timezone: "America/New_York", // You can dynamically determine time zone if needed
               },
             },
           };
+  
+        // Send the event to Pinpoint
+        // const result = await pinpoint.putEvents(params).promise();
 
         const result = await pinpoint.updateEndpoint(params).promise()
 
@@ -97,11 +94,11 @@ export async function POST(req: Request) {
                     Address: email,
                   },
                   Events: {
-                    NewsletterSignUp: { // Custom event name
-                      EventType: "NewsletterSignUp", // Name of the event to log
+                    NewsLetterUnsub: { // Custom event name
+                      EventType: "NewsletterUnsub", // Name of the event to log
                       Timestamp: new Date().toISOString(), // Log the current timestamp
                       Attributes: {
-                        signUpSource: "web-form", // Additional attributes to track
+                        unsubSource: "web-form", // Additional attributes to track
                       },
                     },
                   },
@@ -113,10 +110,16 @@ export async function POST(req: Request) {
         // Record the event in Pinpoint
         const eventResult = await pinpoint.putEvents(eventParams).promise();
         console.log("Event recorded successfully:", eventResult);
-        console.log("secret ", secret.SecretString)
+        // console.log("secret ", secret.SecretString)
+        
+        const fetchParams = {
+            ApplicationId: projectId,  // Replace with your Pinpoint project ID
+            
+        };
+        getEndpoint(fetchParams);
 
         return NextResponse.json({
-            message: "Email recorded in PinPoint"
+            message: "Email unrecorded in PinPoint"
         })
     }
     catch(error) {
