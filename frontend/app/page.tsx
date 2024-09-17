@@ -76,7 +76,7 @@ export default function Home() {
       <div>
         <Events/>
       </div>
-      <div className="flex flex-col items-center m-10 ">
+      <div className="flex flex-col items-center m-2 xl:m-10">
         
         <TextImage 
         head="What is Purrlicious?" 

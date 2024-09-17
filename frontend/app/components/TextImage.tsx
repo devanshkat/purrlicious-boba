@@ -14,13 +14,11 @@ interface TextImageProps {
 const TextImage : React.FC<TextImageProps> = ({head, content, buttontxt, image, orientation, fontSize, page}) => {
 
     return (
-        <div className={`flex min-w-full justify-evenly  m-5 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
-            <img className=" w-[100vmin] h-[75vmin]" src={image}/>
-            <div className=''></div>
-            <div className='flex flex-col justify-center items-center w-[50%]  '>
-                <h1 className={`text-[6vmin] text-center font-bold text-black`}>{head}</h1>
-                
-                <p className='flex text-center text-black text-[3vmin] w-[60%]'>{content}</p>
+        <div className={`flex min-w-full justify-evenly m-1 ${orientation === 0 ? "flex-row" : "flex-row-reverse"}`}>
+            <img className="w-[100%] xl:w-[100vmin] min-h-full xl:h-[75vmin] ml-1 mr-1" src={image}/>
+            <div className='flex flex-col justify-center items-center w-[100%] xl:w-[50%] m-1'>
+                <h1 className={"text-[6vmin] text-center font-bold text-black xl:w-[100%]"}>{head}</h1>
+                <p className='flex text-center text-black text-[3vmin] w-[100%] xl:w-[60%]'>{content}</p>
                 <Button buttontxt={buttontxt} page={page}/>
             </div>
             
