@@ -69,7 +69,7 @@ export default function AboutPage() {
       <Nav showTitle={true}/>
       </div>
 
-      <div className="flex flex-col items-center mt-40">
+      <div className="flex flex-col items-center mt-28 xl:mt-40">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">About Us</h1>
       </div>
       
@@ -105,7 +105,7 @@ export default function AboutPage() {
       
       {/* Employee Page */}
       
-      <div className="flex flex-col items-center justify-center p-5 w-full max-w-screen mx-auto">
+      <div className="flex flex-col items-center justify-center p-0 xl:p-5 w-full max-w-screen mx-auto">
         <EmployeeList emList={employeeList}/>
       </div>
       

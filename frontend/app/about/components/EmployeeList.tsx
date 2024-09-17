@@ -7,7 +7,7 @@ interface EmployeeListProps {
 
 const EmployeeList : React.FC<EmployeeListProps> = ({emList}) => {
   return (
-    <div className="flex flex-col p-5 w-[80%] items-center justify-center">
+    <div className="flex flex-col p-0 xl:p-5 w-[80%] items-center justify-center">
       {/* <div className="flex flex-row items-center justify-center text-[4rem] font-bold text-black">Our Story</div>
       <div className="text-black p-4">At Purrlicious Boba , we’re more than just a place to grab a drink—we dedicated to bring everyone 
         joy through delicious  boba teas and the love of animals. Here, you can sip on our homemade crafted boba tea while enjoying 
@@ -18,7 +18,7 @@ const EmployeeList : React.FC<EmployeeListProps> = ({emList}) => {
         to bring joy to others through delicious boba drinks and the companionship of cats. Our ultimate goal is to expand Purrlicious Boba 
         into a full cat café, where customers can enjoy their favorite drinks while relaxing with furry friends. <br></br>
       </div> */}
-      <div className="flex flex-row items-center justify-center text-[4rem] font-bold text-center text-black pb-5">Our Team</div>
+      <div className="flex flex-row items-center justify-center text-[396%] xl:text-[4rem] font-bold text-center text-black pb-5">Our Team</div>
       <div className="transition-all duration-500 ease-in-out flex flex-row flex-wrap justify-center items-center max-w-full">
         {
             emList.map((employee, index) => (

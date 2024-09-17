@@ -24,7 +24,7 @@ export default function NewsletterPage() {
         <Nav showTitle={true} />
       </div>
 
-      <div className="flex flex-col items-center p-4 space-y-6 mt-40">
+      <div className="flex flex-col items-center p-4 space-y-6 mt-24 xl:mt-40">
         <h1 className="font-inknut text-center text-black text-[3.8em] font-bold">
           Join our Newsletter
         </h1>
