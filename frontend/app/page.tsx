@@ -19,7 +19,23 @@ export default function Home() {
 
   const [title, setShowTitle] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [eventData, setEventData] = useState([]);
+  function getCalendarData() {
+    const data = fetch("/api/calendar")
+                .then(response => response.json())
+                .then(data => {
+                  setEventData(data);
+                })
+                .catch(error => {
+                  console.log(error)
+                })
+  }
+  
+
+
   useEffect(() => {
+    getCalendarData();
+
     const handleScroll = () => {
       if (window != undefined) {
         const position = window.scrollY;
@@ -74,7 +90,7 @@ export default function Home() {
         <Carosell data={carosellData}/>
       </div>
       <div>
-        <Events/>
+        <Events events={eventData}/>
       </div>
       <div className="flex flex-col items-center m-2 xl:m-10">
         
