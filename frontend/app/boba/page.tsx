@@ -11,7 +11,7 @@ import ube from "../../public/Images/ube.jpg"
 
 export default function OurBobaPage() {
     return (
-    <div className="flex flex-col min-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
+    <div className="flex flex-col min-w-screen max-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
       <div className="">
         <Nav showTitle={true}/>
       </div>

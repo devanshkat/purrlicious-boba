@@ -1,10 +1,13 @@
-
+'use client'
 import React from 'react';
 import Logo from "../../public/Images/PLogo.png";
 import Link from "next/link";
 import NavButton from "./NavButton";
 "use-client";
-import {useState, useEffect} from "react";
+import {useState} from "react";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+
+import Hamburger from './Hamburger';
 
 
 interface NavProps {
@@ -12,22 +15,35 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = ({showTitle}) => {
+  const [isHamburgerVisible, setIsHamburgerVisible] = useState(false);
+
+  const toggleHamburgerVisibility = () => {
+    setIsHamburgerVisible(!isHamburgerVisible);
+  };
   // const [showTitle, setShowTitle] = useState(false);
   // console.log(showTitle)
   return (
-    <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-4 top-0 w-full h-1/8">
-      <div className='flex flex-row items-center justify-center'>
+    <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-4 top-0 w-full min-w-screen max-w-screen h-1/8">
+      <div>
+        <button onClick={toggleHamburgerVisibility}>
+          <div className="block sm:hidden">
+            {isHamburgerVisible ? <RxCross2 className='text-black'></RxCross2> : <RxHamburgerMenu className='text-black'></RxHamburgerMenu>}
+          </div>
+        </button>
+        {isHamburgerVisible && <Hamburger onClose={toggleHamburgerVisibility}/>}
+      </div>
+      <div className='flex flex-row mx-auto items-center justify-center'>
         <Link href={"/"}>
-        <img className="rounded-[3.5rem] ml-3" src={Logo.src} alt="Logo" width={"75rem xl: 110rem"} height={"75rem xl: 110rem"}/>
+        <img className="rounded-[100%] w-[5rem] h-[5rem] lg:w-[7.5rem] lg:h-[7.5rem]" src={Logo.src} alt="Logo"/>
         </Link>
         <div className={`transition-all duration-500 ease-in-out transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
           <Link href={"/"}>
-          <h1 className="ml-3 font-inknut text-center text-black text-[2vmin xl: 3vmin] font-bold">Purrlicious Boba</h1>
+          <h1 className="ml-3 font-inknut text-center text-black text-[2vmin lg: 3vmin] font-bold">Purrlicious Boba</h1>
           </Link>
         </div>
       </div>
       
-      <div className="flex flex-row justify-between text-center items-center w-[40%] text-[90%] text-black">
+      <div className="hidden sm:flex flex-row justify-between text-center items-center w-[40%] text-[90%] text-black">
         {/* <NavButton buttontxt='Home' page="/"/> */}
         <NavButton buttontxt='Our Boba' page="/boba"/>
         <NavButton buttontxt='About Us' page="/about"/>

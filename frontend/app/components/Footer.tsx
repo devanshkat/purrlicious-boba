@@ -5,7 +5,7 @@ import TiktokIcon from "../../public/Images/tiktok.svg";
 
 const Footer = () => {
   return (
-    <div className="flex flex-row justify-between items-center bg-orange-300 p-4 bottom-0 w-full h-1/8">
+    <div className="flex flex-row justify-between items-center bg-orange-300 p-4 bottom-0 min-w-screen max-w-screen h-1/8">
       <img className="rounded-[3.5rem]" src={Logo.src} alt="Logo" width={"110rem"} height={"110rem"}/>
 
       <div className="flex flex-row items-center space-x-4">

@@ -64,7 +64,7 @@ export default function AboutPage() {
     ]
 
     return (
-    <div className="flex flex-col h-full min-w-screen w-full bg-[#FED8B1]">
+    <div className="flex flex-col h-full min-w-screen max-w-screen w-full bg-[#FED8B1]">
       <div className="mb-5">
       <Nav showTitle={true}/>
       </div>
