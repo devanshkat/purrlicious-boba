@@ -5,9 +5,10 @@ import NavButtonMobile from "./NavButtonMobile";
 
 interface HamburgerProps {
     onClose: () => void;
+    isVisible: Boolean;
   }
 
-const Hamburger: React.FC<HamburgerProps> = ({onClose}) => {
+const Hamburger: React.FC<HamburgerProps> = ({onClose, isVisible}) => {
     const [isHamburgerVisible, setIsHamburgerVisible] = useState(false);
 
     const toggleHamburgerVisibility = () => {
@@ -15,7 +16,7 @@ const Hamburger: React.FC<HamburgerProps> = ({onClose}) => {
     };
     
     return (
-        <div className="fixed transition-all duration-500 ease-in-out left-0 w-full h-2/7 bg-orange-300 z-20">
+        <div className={`fixed transfrom transtion-all transtion-opacity transtion-transfrom duration-500 ease-in-out mt-11 left-0 w-full h-3/5 bg-orange-300 z-50 ${ isVisible ? 'translate-y-0 opacity-100' : '-translate-y-14 opacity-0'}`}>
             {/* <button onClick={onClose}>
                 <h2 className='text-white'>Hamburger</h2>
             </button> */}

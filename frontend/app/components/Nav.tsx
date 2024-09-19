@@ -30,7 +30,7 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
             {isHamburgerVisible ? <RxCross2 className='text-black'></RxCross2> : <RxHamburgerMenu className='text-black'></RxHamburgerMenu>}
           </div>
         </button>
-        {isHamburgerVisible && <Hamburger onClose={toggleHamburgerVisibility}/>}
+        <Hamburger isVisible={isHamburgerVisible} onClose={toggleHamburgerVisibility}/>
       </div>
       <div className='flex flex-row-reverse lg:flex-row mx-auto items-center justify-center ml-20 lg:ml-2 z-30'>
         <Link href={"/"}>
