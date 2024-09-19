@@ -34,7 +34,7 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
       </div>
       <div className='flex flex-row-reverse lg:flex-row mx-auto items-center justify-center ml-20 lg:ml-2 z-30'>
         <Link href={"/"}>
-        <img className="ml-8 lg:m-0 rounded-[100%] w-[5rem] h-[5rem] lg:w-[7.5rem] lg:h-[7.5rem]" src={Logo.src} alt="Logo"/>
+        <img className="ml-8 lg:m-0 rounded-[100%] w-[5rem] h-[5rem] lg:w-[7.5rem] lg:h-[7.5rem] z-30" src={Logo.src} alt="Logo"/>
         </Link>
         <div className={`transition-all duration-500 ease-in-out items-center justify-center transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
           <Link href={"/"}>
