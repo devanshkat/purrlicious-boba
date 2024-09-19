@@ -16,7 +16,7 @@ const Hamburger: React.FC<HamburgerProps> = ({onClose, isVisible}) => {
     };
     
     return (
-        <div className={`fixed transfrom transtion-all transtion-opacity transtion-transfrom duration-500 ease-in-out left-0 w-full h-3/7 bg-orange-300 z-20 ${ isVisible ? 'translate-y-0 opacity-100' : '-translate-y-81 opacity-0'}`}>
+        <div className={`fixed transfrom transtion-all transtion-opacity transtion-transfrom duration-500 ease-in-out left-0 w-full h-3/7 bg-orange-300 z-20 ${ isVisible ? 'translate-y-0 opacity-100' : '-translate-y-[28rem] opacity-100'}`}>
             {/* <button onClick={onClose}>
                 <h2 className='text-white'>Hamburger</h2>
             </button> */}
