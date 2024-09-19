@@ -43,7 +43,7 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
         </div>
       </div>
       
-      <div className="hidden sm:flex flex-row justify-between text-center items-center w-[40%] text-[90%] text-black">
+      <div className="hidden sm:flex flex-row justify-center text-center items-center w-[40%] text-[90%] text-black">
         {/* <NavButton buttontxt='Home' page="/"/> */}
         <NavButton buttontxt='Our Boba' page="/boba"/>
         <NavButton buttontxt='About Us' page="/about"/>

@@ -9,13 +9,17 @@ interface NavButtonMobileProps {
 
 const NavButtonMobile : React.FC<NavButtonMobileProps> = ({buttontxt, page}) => {
   return (
-    <Link href={page}>
-    <div className="text-[5vmin] p-5 text-center font-bold text-black border-b-2 border-transparent"
-        style = {{
-            transform: "scaleX(0.83) scaleY(1)"
-        }}
-    >{buttontxt}</div>
-    </Link>
+    <div className='flex flex-col items-center'>
+        <Link href={page}>
+          <div className="text-[5vmin] p-5 text-center font-bold text-black "
+              style = {{
+                  transform: "scaleX(0.83) scaleY(1)"
+              }}
+          >{buttontxt}</div>
+        </Link>
+        <div className='border-2 border-orange-600 w-[15em]'></div>
+    </div>
+    
   );
 };
 

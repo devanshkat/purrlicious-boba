@@ -16,11 +16,11 @@ const Hamburger: React.FC<HamburgerProps> = ({onClose, isVisible}) => {
     };
     
     return (
-        <div className={`fixed transfrom transtion-all transtion-opacity transtion-transfrom duration-[600ms] ease-in left-0 w-full h-3/7 bg-orange-300 z-20 ${ isVisible ? 'translate-y-0 opacity-100' : '-translate-y-[36rem] opacity-0'}`}>
+        <div className={`fixed h-[75%] transfrom transtion-all transtion-opacity transtion-transfrom duration-[600ms] ease-in left-0 w-full h-3/7 bg-orange-300 z-20 ${ isVisible ? 'translate-y-[0rem] opacity-100' : '-translate-y-[55rem] opacity-0'}`}>
             {/* <button onClick={onClose}>
                 <h2 className='text-white'>Hamburger</h2>
             </button> */}
-            <div className="flex-col mt-[5%] mb-[5%] transition-all duration-500 ease-in-out justify-between text-center items-center h-[60%] text-[90%] text-black">
+            <div className={`flex flex-col pb-[20%] mt-[5%] mb-[5%] transition-all duration-500 delay-200 ease-in-out justify-evenly text-center items-center h-[100%] text-[90%] text-black ${isVisible ? "opacity-100" : "opacity-0"}`}>
                 {/* <NavButton buttontxt='Home' page="/"/> */}
                 <NavButtonMobile buttontxt='Our Boba' page="/boba"/>
                 <NavButtonMobile buttontxt='About Us' page="/about"/>
