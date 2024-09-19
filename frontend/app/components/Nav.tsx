@@ -32,13 +32,13 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
         </button>
         {isHamburgerVisible && <Hamburger onClose={toggleHamburgerVisibility}/>}
       </div>
-      <div className='flex flex-row mx-auto items-center justify-center'>
+      <div className='flex flex-row-reverse lg:flex-row mx-auto items-center justify-center ml-20 lg:ml-2 z-30'>
         <Link href={"/"}>
-        <img className="rounded-[100%] w-[5rem] h-[5rem] lg:w-[7.5rem] lg:h-[7.5rem]" src={Logo.src} alt="Logo"/>
+        <img className="ml-8 lg:m-0 rounded-[100%] w-[5rem] h-[5rem] lg:w-[7.5rem] lg:h-[7.5rem]" src={Logo.src} alt="Logo"/>
         </Link>
-        <div className={`transition-all duration-500 ease-in-out transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
+        <div className={`transition-all duration-500 ease-in-out items-center justify-center transform ${showTitle ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
           <Link href={"/"}>
-          <h1 className="ml-3 font-inknut text-center text-black text-[2vmin lg: 3vmin] font-bold">Purrlicious Boba</h1>
+          <h1 className="mr-0 lg:ml-3 font-inknut text-center text-black text-[5vmin] lg:text-[4vmin] font-bold">Purrlicious Boba</h1>
           </Link>
         </div>
       </div>

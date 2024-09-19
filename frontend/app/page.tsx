@@ -79,7 +79,7 @@ export default function Home() {
         
       <div className="flex flex-col items-center bg-orange-300">
         <Nav showTitle={title}/>
-        <div className="mt-[10em] flex flex-col items-center">
+        <div className="mt-[7em] xl:mt-[10em] flex flex-col items-center">
           <h1 className="font-inknut text-center text-black text-[2.7em] xl:text-[3.8em] font-bold">Purrlicious Boba</h1>
           <p className="font-inter text-[#757575] text-[1.5em] text-center font-bold w-[70%]">the first boba cat cafe in davis</p>
           <Button buttontxt="Explore our Drinks!" page="/boba"/>

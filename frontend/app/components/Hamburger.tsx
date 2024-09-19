@@ -15,11 +15,11 @@ const Hamburger: React.FC<HamburgerProps> = ({onClose}) => {
     };
     
     return (
-        <div className="fixed transition-all duration-500 ease-in-out mt-11 left-0 w-full h-3/5 bg-orange-300 z-50">
+        <div className="fixed transition-all duration-500 ease-in-out left-0 w-full h-2/7 bg-orange-300 z-20">
             {/* <button onClick={onClose}>
                 <h2 className='text-white'>Hamburger</h2>
             </button> */}
-            <div className="flex-col mt-[20%] transition-all duration-500 ease-in-out justify-between text-center items-center h-[60%] text-[90%] text-black">
+            <div className="flex-col mt-[5%] mb-[5%] transition-all duration-500 ease-in-out justify-between text-center items-center h-[60%] text-[90%] text-black">
                 {/* <NavButton buttontxt='Home' page="/"/> */}
                 <NavButtonMobile buttontxt='Our Boba' page="/boba"/>
                 <NavButtonMobile buttontxt='About Us' page="/about"/>
