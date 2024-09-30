@@ -1,6 +1,6 @@
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import Logo from "../../public/Images/PLogo.png";
+import Logo from "../../public/Images/ThumbsUp.jpg";
 import ContactForm from "./components/ContactForm"
 
 
