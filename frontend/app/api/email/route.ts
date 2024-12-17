@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 // const AWS = require("aws-sdk")
 
 
@@ -129,7 +129,7 @@ import { NextResponse } from "next/server";
 const nodemailer = require("nodemailer");
 export async function GET() {
   const yourEmail = 'purrliciousbobanewsletter@gmail.com';
-  const yourPassword = '4546';
+  const yourPassword = 'hgle hvzc psoc xzrb';
   
   const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -158,3 +158,42 @@ export async function GET() {
     status: 200
   });
 }
+
+export async function POST(request: NextRequest) {
+    try {
+      const body = await request.json();
+      
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASSWORD
+        }
+      });
+
+      const mailOptions = {
+        from: process.env.GMAIL_USER,
+        to: body.to || 'recipient@example.com',
+        subject: body.subject || 'Test Email',
+        text: body.text || 'Hello, this is a test email!'
+      };
+  
+      const info = await transporter.sendMail(mailOptions);
+      
+      // Return success response
+      return NextResponse.json({ 
+        status: 'success', 
+        message: 'Email sent successfully',
+        response: info.response 
+      }, { status: 200 });
+  
+    } catch (error) {
+      console.error('Email sending error:', error);
+      
+      // Return error response
+      return NextResponse.json({ 
+        status: 'error', 
+        message: 'Failed to send email' 
+      }, { status: 500 });
+    }
+  }
