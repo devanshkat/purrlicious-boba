@@ -117,7 +117,11 @@ export default function Home() {
       <div className="mt-auto w-full">
         <Footer />
       </div>
+
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
     </div>
+    
   );
 }
 

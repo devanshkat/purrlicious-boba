@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Adith/AppData/Local/Temp/62b97462-b227-4f34-969b-2d7e9c7fbee2_Lab2_main.zip.ee2",
+      "program": "c:/Users/Adith/AppData/Local/Temp/62b97462-b227-4f34-969b-2d7e9c7fbee2_Lab2_main.zip.ee2/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

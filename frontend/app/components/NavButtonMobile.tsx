@@ -17,7 +17,7 @@ const NavButtonMobile : React.FC<NavButtonMobileProps> = ({buttontxt, page}) => 
               }}
           >{buttontxt}</div>
         </Link>
-        <div className='border-2 border-orange-600 w-[15em]'></div>
+        <div className='border-2 border-orange-600 w-[20em]'></div>
     </div>
     
   );
