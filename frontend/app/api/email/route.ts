@@ -201,6 +201,16 @@ export async function GET() {
 //   }
 
 export async function POST(request: NextRequest) {
+    const yourEmail = 'purrliciousbobanewsletter@gmail.com';
+    const yourPassword = 'hgle hvzc psoc xzrb';
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: yourEmail,
+            pass: yourPassword,
+        },
+    });
+    
     try {
         const body = await request.json();
         const { email } = body;
@@ -229,6 +239,21 @@ export async function POST(request: NextRequest) {
         if (userEmailsDoc.emails.includes(email)) {
             return NextResponse.json({ message: 'Email is already subscribed' }, { status: 400 });
         }
+
+        const mailOptions = {
+            from: yourEmail,
+            to: email,
+            subject: 'Purrlicious Boba Newsletter!',
+            text: 'Hello, you have successfully signed up for the newsletter!',
+        };
+
+        transporter.sendMail(mailOptions, (error :any, info:any) => {
+            if (error) {
+                console.log('Error:', error);
+            } else {
+                console.log('Email sent:', info.response);
+            }
+        });
 
         // Append the new email to the list in the existing document
         userEmailsDoc.emails.push(email);

@@ -16,9 +16,9 @@ export async function GET( ) {
         });
 
 
-        let calendarData = []
+        let calendarData = [];
         const data = await response.json();
-        const items = data.items
+        const items = data.items;
 
         const now = new Date();
         
