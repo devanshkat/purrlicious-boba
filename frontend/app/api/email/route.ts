@@ -1,4 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
+import mongoose from 'mongoose';
+import UserEmails from '../../../models/UserEmails';
 // const AWS = require("aws-sdk")
 
 
@@ -159,41 +161,82 @@ export async function GET() {
   });
 }
 
+// export async function POST(request: NextRequest) {
+//     try {
+//       const body = await request.json();
+      
+//       const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//           user: process.env.GMAIL_USER,
+//           pass: process.env.GMAIL_APP_PASSWORD
+//         }
+//       });
+
+//       const mailOptions = {
+//         from: process.env.GMAIL_USER,
+//         to: body.to || 'recipient@example.com',
+//         subject: body.subject || 'Test Email',
+//         text: body.text || 'Hello, this is a test email!'
+//       };
+  
+//       const info = await transporter.sendMail(mailOptions);
+      
+//       // Return success response
+//       return NextResponse.json({ 
+//         status: 'success', 
+//         message: 'Email sent successfully',
+//         response: info.response 
+//       }, { status: 200 });
+  
+//     } catch (error) {
+//       console.error('Email sending error:', error);
+      
+//       // Return error response
+//       return NextResponse.json({ 
+//         status: 'error', 
+//         message: 'Failed to send email' 
+//       }, { status: 500 });
+//     }
+//   }
+
 export async function POST(request: NextRequest) {
     try {
-      const body = await request.json();
-      
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_APP_PASSWORD
-        }
-      });
+        const body = await request.json();
+        const { email } = body;
 
-      const mailOptions = {
-        from: process.env.GMAIL_USER,
-        to: body.to || 'recipient@example.com',
-        subject: body.subject || 'Test Email',
-        text: body.text || 'Hello, this is a test email!'
-      };
-  
-      const info = await transporter.sendMail(mailOptions);
-      
-      // Return success response
-      return NextResponse.json({ 
-        status: 'success', 
-        message: 'Email sent successfully',
-        response: info.response 
-      }, { status: 200 });
-  
-    } catch (error) {
-      console.error('Email sending error:', error);
-      
-      // Return error response
-      return NextResponse.json({ 
-        status: 'error', 
-        message: 'Failed to send email' 
-      }, { status: 500 });
+        // Check for valid email
+        if (!email || !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+            return NextResponse.json({ message: 'Invalid email address' }, { status: 400 });
+        }
+    
+        // Connect to MongoDB
+        const mongoURI = process.env.MONGODB_URI;
+        if (!mongoURI) {
+        throw new Error('MongoDB URI is not defined');
+        }
+        if (mongoose.connection.readyState === 0) {
+            await mongoose.connect(process.env.MONGODB_URI || '');
+        }
+
+        const userEmailsDoc = await UserEmails.findOne({});
+        if (!userEmailsDoc) {
+            // If no document exists, create one
+            const newDoc = new UserEmails({ emails: [email] });
+            await newDoc.save();
+            return NextResponse.json({ message: 'Email successfully subscribed' }, { status: 200 });
+        }
+        if (userEmailsDoc.emails.includes(email)) {
+            return NextResponse.json({ message: 'Email is already subscribed' }, { status: 400 });
+        }
+
+        // Append the new email to the list in the existing document
+        userEmailsDoc.emails.push(email);
+        await userEmailsDoc.save();
+
+        return NextResponse.json({ message: 'Email successfully subscribed' }, { status: 200 });
+    } catch(error) {
+        console.error('Error saving email:', error);
+        return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
     }
-  }
+}

@@ -16,6 +16,12 @@ export default function NewsletterPage() {
       },
       body: JSON.stringify({ email }),
     });
+
+    if (response.ok) {
+      console.log('Email successfully submitted!');
+    } else {
+      console.error('Error submitting email');
+    }
   }
 
   return (
