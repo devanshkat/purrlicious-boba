@@ -3,25 +3,32 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Table from "../../public/Images/purrlicious_tabling.png";
 import Button from "./components/Button";
+import CustomEmailPopup from "./components/EmailPopup";
 import TextImage from ".././components/TextImage";
 import { useState, useEffect } from "react";
 
+
 export default function NewsletterPage() {
   const [email, setEmail] = useState("");
-  async function signUpEmail(e: any) {
-    let response = await fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
 
-    // TODO: turn these console.log statements into a popup
-    if (response.ok) {
-      console.log('Email successfully submitted!');
-    } else {
-      console.error('Error submitting email');
+  async function signUpEmail(e: any) {
+    try {
+        let response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      setSuccess(response.ok);
+      setIsPopupVisible(true);
+
+    } catch (error) {
+      setSuccess(false);
+      setIsPopupVisible(true);
     }
   }
 
@@ -60,6 +67,14 @@ export default function NewsletterPage() {
           onClick={signUpEmail}
           buttontxt="Get Notified!"
           page="/newsletter"
+        />
+      </div>
+
+      <div className="flex justify-center mt-auto mb-auto">
+        <CustomEmailPopup
+          isSuccess={isSuccess}
+          isVisible={isPopupVisible}
+          onClose={() => setIsPopupVisible(false)}
         />
       </div>
 
