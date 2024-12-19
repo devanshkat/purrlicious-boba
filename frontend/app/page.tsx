@@ -76,6 +76,7 @@ export default function Home() {
   ]
 
   return (
+    
     <div className="flex flex-col min-w-screen min-h-screen h-[100%] w-[100%] bg-orange-100">
         
       <div className="flex flex-col items-center bg-orange-300">
