@@ -18,7 +18,7 @@ const Events: React.FC<EventsProps> = ({ events }) => {
         
     // });
 
-    console.log(events);
+    // console.log(events);
   return (
     <div className="flex flex-col justify-center items-center text-black">
         <div className='text-[6vmin] font-bold'>Events</div>

@@ -3,6 +3,7 @@
 require('dotenv').config({path: ".env.local"});
 const express = require("express");
 const axios = require("axios");
+const nodemailer = require("nodemailer");
 
 const key = process.env.GOOGLE_API_KEY;
 const app = express();
@@ -75,7 +76,7 @@ async function sendEmailsWeekly() {
         const emails = userEmailsDoc.emails;
         const events = await getEvents();
 
-        let eventHTML = <h1>Weekly Upcoming Events!</h1> 
+        let eventHTML = "<h1>Weekly Upcoming Events!</h1> "
         events.forEach(event => {
             eventHTML += `
                 <div>
@@ -102,7 +103,7 @@ async function sendEmailsWeekly() {
                 from: 'purrliciousbobanewsletter@gmail.com',
                 to: email,
                 subject: 'Weekly Events Newsletter',
-                html: eventHtml,
+                html: eventHTML,
             };
 
             transporter.sendMail(mailOptions, (error, info) => {
