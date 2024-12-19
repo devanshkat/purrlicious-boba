@@ -240,11 +240,53 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ message: 'Email is already subscribed' }, { status: 400 });
         }
 
+        const signedUpHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purrlicious Boba Newsletter</title>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; background-color: #FED8B1; font-family: Arial, sans-serif;">
+  <table style="width: 100%; border-spacing: 0; border-collapse: collapse; background-color: #FED8B1;">
+    <!-- Header Section -->
+    <tr>
+      <td style="background-color: #FDBA74; text-align: center; padding: 5em;">
+        <h1 style="margin: 0; font-size: 50px; font-weight: bold; color: #000;">
+          Welcome to the Purrlicious Boba Newsletter!!
+        </h1>
+      </td>
+    </tr>
+    
+    <!-- Main Content Section -->
+    <tr>
+      <td style="text-align: center; padding: 8em; font-size: 24px; color: #000;">
+        <p style="margin: 0; font-size: 18px;">
+          You are now officially signed up to the Purrlicious Boba Newsletter! You will receive emails weekly detailing when we will be selling boba and where we are selling from.
+        </p>
+      </td>
+    </tr>
+    
+    <!-- Footer Section -->
+    <tr>
+      <td style="background-color: #FDBA74; text-align: center; padding: 10px;">
+        <p style="margin: 0; font-size: 14px; color: #000;">&copy; 2024 Purrlicious Boba. All rights reserved.</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+        `;
         const mailOptions = {
             from: yourEmail,
             to: email,
             subject: 'Purrlicious Boba Newsletter!',
-            text: 'Hello, you have successfully signed up for the newsletter!',
+            // text: 'Hello, you have successfully signed up for the newsletter!',
+            html: signedUpHTML
         };
 
         transporter.sendMail(mailOptions, (error :any, info:any) => {

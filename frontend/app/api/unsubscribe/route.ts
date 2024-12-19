@@ -36,14 +36,41 @@ export async function PUT(request: Request) {
     }
 
     const userEmailsDoc = await UserEmails.findOne({});
+    const unsubHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsubscribe</title>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; background-color: #FED8B1; font-family: Arial, sans-serif;">
+  <table  style="width: 100%; border-spacing: 0; border-collapse: collapse; background-color: #FED8B1;">
+    <tr>
+      <td style="background-color: #FDBA74; text-align: center; padding: 5em;">
+        <h1 style="margin: 0; font-size: 50px; font-weight: bold; color: #000;">We Are Sad to See You Leave :(</h1>
+      </td>
+    </tr>
+    <tr >
+      <td style="text-align: center; padding: 8em; font-size: 24px; color: #000;">
+        <p style="margin: 0;">You have now officially unsubscribed to the Purrlicious Boba Newsletter! You will no longer receive emails weekly detailing events.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color: #FDBA74; text-align: center; padding: 10px; font-size: 14px; color: #000;">
+        <p style="margin: 0;">&copy; 2024 Purrlicious Boba. All rights reserved.</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
     if (userEmailsDoc.emails.includes(email)) {
       const mailOptions = {
         from: yourEmail,
         to: email,
         subject: 'Unsubscribed from NewsLetter',
-        html: `
-        <h1> You have unsubscribed from the newsletter :( </h1>
-        `,
+        html: unsubHTML,
       };
   
       transporter.sendMail(mailOptions, (error :any, info:any) => {

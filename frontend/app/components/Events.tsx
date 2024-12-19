@@ -20,6 +20,7 @@ const Events: React.FC<EventsProps> = ({ events }) => {
 
     // console.log(events);
   return (
+    
     <div className="flex flex-col justify-center items-center text-black">
         <div className='text-[6vmin] font-bold'>Events</div>
         <div className='flex flex-col transition-all duration-500 ease-in-out rounded-[1.5em] text-center text-[#454545] p-10 w-[90%]'>
