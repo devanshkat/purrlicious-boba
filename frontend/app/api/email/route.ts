@@ -202,7 +202,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
     const yourEmail = 'purrliciousbobanewsletter@gmail.com';
-    const yourPassword = 'hgle hvzc psoc xzrb';
+    const yourPassword = process.env.GOOGLE_APP_PASSWORD;
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {

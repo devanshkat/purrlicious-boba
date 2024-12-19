@@ -17,6 +17,7 @@ export default function NewsletterPage() {
       body: JSON.stringify({ email }),
     });
 
+    // TODO: turn these console.log statements into a popup
     if (response.ok) {
       console.log('Email successfully submitted!');
     } else {

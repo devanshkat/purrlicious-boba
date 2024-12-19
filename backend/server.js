@@ -63,6 +63,7 @@ async function getEvents() {
     }
 
     data = tempData;
+    return data;
 }
 
 async function sendEmailsWeekly() {
@@ -72,9 +73,51 @@ async function sendEmailsWeekly() {
         await mongoose.connect(mongoURI);
         const userEmailsDoc = await UserEmails.findOne({});
         const emails = userEmailsDoc.emails;
+        const events = await getEvents();
 
-        console.log(emails);
-        console.log(data);
+        let eventHTML = <h1>Weekly Upcoming Events!</h1> 
+        events.forEach(event => {
+            eventHTML += `
+                <div>
+                    <h2>${event.title}</h2>
+                    <p><strong>Start time:</strong> ${event.startTime}</p>
+                    <p><strong>End time:</strong> ${event.endTime}</p>
+                    <p><strong>Location:</strong> ${event.location || 'Not specified'}</p>
+                </div>
+                <hr />
+            `;
+        });
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'purrliciousbobanewsletter@gmail.com',
+                pass: process.env.GOOGLE_APP_PASSWORD, // Use environment variables for sensitive data
+            },
+        });
+
+        // Send emails
+        for (let email of emails) {
+            const mailOptions = {
+                from: 'purrliciousbobanewsletter@gmail.com',
+                to: email,
+                subject: 'Weekly Events Newsletter',
+                html: eventHtml,
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(`Error sending to ${email}:`, error);
+                } else {
+                    console.log(`Email sent to ${email}:`, info.response);
+                }
+            });
+        }
+
+        // console.log(emails);
+        // console.log(data);
+
+        console.log("Emails sent successfully");
     }
 }
 
