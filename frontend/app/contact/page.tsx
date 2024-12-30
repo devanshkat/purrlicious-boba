@@ -1,11 +1,26 @@
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
+"use client";
+
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import Logo from "../../public/Images/ThumbsUp.jpg";
-import ContactForm from "./components/ContactForm"
+import ContactForm from "./components/ContactForm";
+import CustomPopup from "./components/Popup";
+import React, { useState } from "react";
 
 
 export default function ContactPage() {
-    return (
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
+
+  const handlePopupVisibility = (visible: boolean) => {
+    setIsPopupVisible(visible);
+  };
+
+  const handleSuccessStatus = (success: boolean) => {
+    setSuccess(success);
+  };  
+  
+  return (
     <div className="flex flex-col min-w-screen min-h-screen w-full h-full bg-[#FED8B1]">
       <div className="">
         <Nav showTitle={true}/>
@@ -19,8 +34,19 @@ export default function ContactPage() {
       <div className="flex flex-col sm:flex-row items-center m-[2rem] sm:m-[4rem] justify-center gap-[2rem] sm:gap-[15rem]">
         <img src={Logo.src} alt="Logo" className="w-5/6 sm:w-1/3"/>
         <div className="w-full sm:w-auto"> 
-          <ContactForm/>
+          <ContactForm
+            onPopupVisibilityChange={handlePopupVisibility}
+            onSuccessStatusChange={handleSuccessStatus}
+          />
         </div>
+      </div>
+
+      <div className="flex justify-center mt-auto mb-auto">
+        <CustomPopup
+          isSuccess={isSuccess}
+          isVisible={isPopupVisible}
+          onClose={() => setIsPopupVisible(false)}
+        />
       </div>
       
       <div className="mt-auto h-full w-full">

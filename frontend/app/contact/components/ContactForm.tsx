@@ -3,7 +3,15 @@ import React from 'react';
 import Button from "../../components/Button";
 import {useState} from "react";
 
-const ContactForm = () => {
+interface ContactProps {
+    onPopupVisibilityChange: (visible: boolean) => void;
+    onSuccessStatusChange: (success: boolean) => void;
+}
+
+const ContactForm: React.FC<ContactProps> = ({
+    onPopupVisibilityChange,
+    onSuccessStatusChange,
+}) => {
     // Form values
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -30,12 +38,12 @@ const ContactForm = () => {
             body: JSON.stringify({ firstName, lastName, email, message }),
           });
           
-        //   setSuccess(response.ok);
-        //   setIsPopupVisible(true);
+          onSuccessStatusChange(response.ok);
+          onPopupVisibilityChange(true);
     
         } catch (error) {
-        //   setSuccess(false);
-        //   setIsPopupVisible(true);
+            onSuccessStatusChange(false);
+            onPopupVisibilityChange(true);
         }
     }
     
