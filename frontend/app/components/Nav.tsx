@@ -4,7 +4,7 @@ import Logo from "../../public/Images/PLogo.png";
 import Link from "next/link";
 import NavButton from "./NavButton";
 "use-client";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 
 import Hamburger from './Hamburger';
@@ -20,10 +20,26 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
   const toggleHamburgerVisibility = () => {
     setIsHamburgerVisible(!isHamburgerVisible);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsHamburgerVisible(false); // Hide hamburger menu on larger screens
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   // const [showTitle, setShowTitle] = useState(false);
   // console.log(showTitle)
   return (
-    <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-4 top-0 w-full min-w-screen max-w-screen h-1/8">
+    <div className="flex fixed flex-row z-10 justify-between items-center bg-orange-300 p-1 top-0 w-full min-w-screen max-w-screen h-1/8">
       <div>
         <button onClick={toggleHamburgerVisibility}>
           <div className="block sm:hidden">
@@ -43,7 +59,7 @@ const Nav: React.FC<NavProps> = ({showTitle}) => {
         </div>
       </div>
       
-      <div className="z-20 hidden sm:flex flex-row justify-between text-center items-center w-[35%] text-[90%] text-black pl-10">
+      <div className="z-20 mr-5 hidden sm:flex flex-row justify-between text-center items-center w-[35%] text-[90%] text-black pl-10">
         {/* <NavButton buttontxt='Home' page="/"/> */}
         <NavButton buttontxt='Our Boba' page="/boba"/>
         <NavButton buttontxt='About Us' page="/about"/>
