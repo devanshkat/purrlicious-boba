@@ -13,6 +13,7 @@ import img1 from "../public/Images/Carousel1.png"
 import img2 from "../public/Images/Carousel2.png"
 import img3 from "../public/Images/Carousel3.png"
 import img4 from "../public/Images/Carousel4.png"
+import { TypeAnimation } from 'react-type-animation';
 // import img5 from "../public/Images/Carousel5.png"
 
 export default function Home() {
@@ -83,7 +84,23 @@ export default function Home() {
         <Nav showTitle={title}/>
         <div className="mt-[7em] xl:mt-[10em] flex flex-col items-center">
           <h1 className="font-inknut text-center text-black text-[2.7em] xl:text-[3.8em] font-bold">Purrlicious Boba</h1>
-          <p className="font-inter text-[#757575] text-[1.5em] text-center font-bold w-[70%]">the first boba cat cafe in davis</p>
+          <div className="font-inter text-[#757575] text-[1.5em] text-center font-bold w-[70%]">
+            {/* the first boba cat cafe in davis */}
+          <TypeAnimation
+            sequence={[
+              // Enter Substrings for the typewrite to cycle through
+              'The best boba cat cafe.',
+              1500, //delay
+              "The best price.",
+              1500,
+              "The best experience.",
+              1500,
+            ]}
+            wrapper="span"
+            speed={25}
+            repeat={Infinity}
+          />
+          </div>
           <Button buttontxt="Explore our Drinks!" page="/boba"/>
         </div>
        
