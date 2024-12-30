@@ -98,7 +98,7 @@ export default function Home() {
             ]}
             wrapper="span"
             speed={25}
-            style={{fontFamily: "Helvetica"}}
+            style={{fontFamily: "Inter"}}
             repeat={Infinity}
           />
           </div>
