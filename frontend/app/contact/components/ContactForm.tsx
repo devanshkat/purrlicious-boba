@@ -30,16 +30,20 @@ const ContactForm: React.FC<ContactProps> = ({
     // Sends email to purrliciousboba
     async function contactUs() {
         try {
-            let response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ firstName, lastName, email, message }),
-          });
-          
-          onSuccessStatusChange(response.ok);
-          onPopupVisibilityChange(true);
+            if (firstName && lastName && email && message) {
+                let response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ firstName, lastName, email, message }),
+                });
+            
+            onSuccessStatusChange(response.ok);
+            onPopupVisibilityChange(true);
+        } else {
+            throw new Error("");
+        }
     
         } catch (error) {
             onSuccessStatusChange(false);

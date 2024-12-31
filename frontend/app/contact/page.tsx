@@ -9,7 +9,7 @@ import React, { useState } from "react";
 
 
 export default function ContactPage() {
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
 
   const handlePopupVisibility = (visible: boolean) => {
