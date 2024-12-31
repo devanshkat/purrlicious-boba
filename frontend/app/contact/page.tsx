@@ -9,7 +9,7 @@ import React, { useState } from "react";
 
 
 export default function ContactPage() {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(true);
   const [isSuccess, setSuccess] = useState(false);
 
   const handlePopupVisibility = (visible: boolean) => {
@@ -25,6 +25,11 @@ export default function ContactPage() {
       <div className="">
         <Nav showTitle={true}/>
       </div>
+      <CustomPopup
+          isSuccess={isSuccess}
+          isVisible={isPopupVisible}
+          onClose={() => setIsPopupVisible(false)}
+        />
 
       <div className="flex flex-col items-center p-4 mt-40">
         <h1 className="font-inknut text-center text-black text-[2em] sm:text-[3.8em] font-bold">Contact Us</h1>
@@ -42,11 +47,11 @@ export default function ContactPage() {
       </div>
 
       <div className="flex justify-center mt-auto mb-auto">
-        <CustomPopup
+        {/* <CustomPopup
           isSuccess={isSuccess}
           isVisible={isPopupVisible}
           onClose={() => setIsPopupVisible(false)}
-        />
+        /> */}
       </div>
       
       <div className="mt-auto h-full w-full">
