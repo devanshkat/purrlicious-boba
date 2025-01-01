@@ -21,6 +21,8 @@ export default function Home() {
   const [title, setShowTitle] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [eventData, setEventData] = useState([]);
+  
+  
   function getCalendarData() {
     const data = fetch("/api/calendar")
                 .then(response => response.json())
@@ -75,6 +77,67 @@ export default function Home() {
     //   alt: "Image 5"
     // }
   ]
+    const [currentRange, setCurrentRange] = useState<number[]>([0, 1, 2]);
+    const [incTrig, setIncTrig] = useState(0);
+    const [decTrig, setDecTrig] = useState(0);
+    const [rotatedData, setRotatedData] = useState( [
+      {
+        src: img1.src,
+        alt: "Image 1"
+      },
+      {
+        src: img2.src,
+        alt: "Image 2"
+      },
+      {
+        src: img3.src,
+        alt: "Image 3"
+      },
+      {
+        src: img4.src,
+        alt: "Image 4"
+      },
+      // {
+      //   src: img5.src,
+      //   alt: "Image 5"
+      // }
+    ]);
+    function incrementRange() {
+      // setCurrentRange((prevRange: number[]) => {
+      //     const temp = prevRange.slice(1);
+      //     const value = prevRange[prevRange.length-1] + 1;
+      //     if (value == rotatedData.length()) {
+
+      //     }
+      //     // temp.push((prevRange[rotatedData.length - 1] + 1));
+      //     return temp;
+      // });
+    }
+
+    function decrementRange(): void {
+      setCurrentRange((prevRange: number[]) => {
+          const temp = [...prevRange];
+          temp.pop();
+          temp.unshift((prevRange[0] - 1 + rotatedData.length) % rotatedData.length);
+          return temp;
+      });
+    }
+
+  useEffect(() => {
+      let newData = [...rotatedData];
+      let first = newData[0];
+      newData.shift();
+      newData.push(first);
+      setRotatedData(newData)
+  }, [incTrig]); 
+
+  useEffect(() => {
+      let newData = [...rotatedData];
+      let last = newData[newData.length-1];
+      newData.pop();
+      newData.unshift(last);
+      setRotatedData(newData);
+   }, [decTrig]); 
 
   return (
     
@@ -90,14 +153,14 @@ export default function Home() {
             sequence={[
               // Enter Substrings for the typewrite to cycle through
               'The best boba cat cafe.',
-              1500, //delay
+              2000, //delay
               "The best price.",
-              1500,
+              2000,
               "The best experience.",
-              1500,
+              2000,
             ]}
             wrapper="span"
-            speed={10}
+            speed={1}
             style={{fontFamily: "Inter"}}
             repeat={Infinity}
           />
@@ -107,7 +170,7 @@ export default function Home() {
        
       </div>
       <div className="flex justify-center text-center items-center text-black">
-        <Carosell data={carosellData}/>
+        <Carosell data={rotatedData} currentRange={currentRange} incrementTrigger={ incTrig} setIncrementTrigger={setIncTrig} decrementTrigger={decTrig} setDecrementTrigger={setDecTrig}/>
       </div>
       <div>
         <Events events={eventData}/>
