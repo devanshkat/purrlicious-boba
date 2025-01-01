@@ -65,15 +65,15 @@ const Carosell : React.FC<CarosellProps> = ({data, currentRange, incrementTrigge
 
 
     return (
-        <div className="flex justify-center items-center w-[80vw] h-[30rem] xl:w-[30vw] xl:h-[45rem] relative m-5">
-            <BsArrowLeftCircleFill className="absolute w-[2rem] h-[2rem] text-white left-1 filter drop-shadow hover:cursor-pointer bg-black rounded-[100%]" onClick={previousSlide}/>
+        <div className="flex justify-center items-center w-[35%] h-[60%] md:w-[80vw] md:h-[30rem] xl:w-[30vw] xl:h-[45rem] relative m-5">
+            <BsArrowLeftCircleFill className="absolute z-10 -left-[110%] xl:-left-[30%] w-[3rem] h-[3rem] m-4 text-white filter drop-shadow hover:cursor-pointer bg-black rounded-[100%]" onClick={previousSlide}/>
             {data.map((item,idx) => {
                 return <img className={`
                     ${currentRange.includes(idx) ? "rounded-[0.5em] shadow opacity-100  w-[85%] h-[85%]" : "hidden"} m-2 transition-all duration-300 ease-in-out 
                     ${idx == 1 ? "scale-100" : "scale-75"} `} 
                     src={item.src} alt={item.alt} key={idx}/>
             })}
-            <BsArrowRightCircleFill className="absolute w-[2rem] h-[2rem] text-white right-1 filter drop-shadow hover:cursor-pointer bg-black border-2 border-orange-100 rounded-[100%]" onClick={nextSlide}/>
+            <BsArrowRightCircleFill className="absolute z-10 -right-[110%] xl:-right-[30%] w-[3rem] h-[3rem] m-4 text-white filter drop-shadow hover:cursor-pointer bg-black border-2 border-orange-100 rounded-[100%]" onClick={nextSlide}/>
             {/* <span className="flex absolute bottom-[1rem] ">
                 {data.map((_, idx) => {
                     return <button className={slide === idx ? "bg-white h-[0.5rem] w-[0.5rem] rounded-[100%] outline-none border-none shadow m-[0.2rem]" : 

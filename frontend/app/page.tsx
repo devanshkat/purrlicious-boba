@@ -169,7 +169,7 @@ export default function Home() {
         </div>
        
       </div>
-      <div className="flex justify-center text-center items-center text-black">
+      <div className="flex justify-center text-center items-center text-black w-full overflow-x-hidden">
         <Carosell data={rotatedData} currentRange={currentRange} incrementTrigger={ incTrig} setIncrementTrigger={setIncTrig} decrementTrigger={decTrig} setDecrementTrigger={setDecTrig}/>
       </div>
       <div>
