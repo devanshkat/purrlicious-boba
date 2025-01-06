@@ -102,26 +102,6 @@ export default function Home() {
       //   alt: "Image 5"
       // }
     ]);
-    function incrementRange() {
-      // setCurrentRange((prevRange: number[]) => {
-      //     const temp = prevRange.slice(1);
-      //     const value = prevRange[prevRange.length-1] + 1;
-      //     if (value == rotatedData.length()) {
-
-      //     }
-      //     // temp.push((prevRange[rotatedData.length - 1] + 1));
-      //     return temp;
-      // });
-    }
-
-    function decrementRange(): void {
-      setCurrentRange((prevRange: number[]) => {
-          const temp = [...prevRange];
-          temp.pop();
-          temp.unshift((prevRange[0] - 1 + rotatedData.length) % rotatedData.length);
-          return temp;
-      });
-    }
 
   useEffect(() => {
       let newData = [...rotatedData];
