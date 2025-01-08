@@ -150,7 +150,8 @@ export default function Home() {
        
       </div>
       <div className="flex justify-center text-center items-center text-black w-full overflow-x-hidden">
-        <Carosell data={rotatedData} currentRange={currentRange} incrementTrigger={ incTrig} setIncrementTrigger={setIncTrig} decrementTrigger={decTrig} setDecrementTrigger={setDecTrig}/>
+        <Carosell data={rotatedData} />
+        {/* <Carosell data={rotatedData} currentRange={currentRange} incrementTrigger={ incTrig} setIncrementTrigger={setIncTrig} decrementTrigger={decTrig} setDecrementTrigger={setDecTrig}/> */}
       </div>
       <div>
         <Events events={eventData}/>
