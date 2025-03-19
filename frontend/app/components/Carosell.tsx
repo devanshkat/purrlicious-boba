@@ -98,7 +98,7 @@ const Carosell: React.FC<CarosellProps> = ({data}) => {
                         alt={data[idx].alt}
                         className={`
                             rounded-[0.5em] shadow opacity-100 transition-all duration-300 ease-in-out transform absolute
-                            ${idx === currentSlide ? "scale-100 w-[85%] h-[85%]" : "scale-75 w-[70%] h-[70%]"}
+                            ${idx === currentSlide ? "scale-100 w-[75%] h-[95%]" : "scale-75 w-[70%] h-[90%]"}
                         `}
                         style={{
                             left: index === 0 ? '-30%' : index === 1 ? '50%' : '130%', //Positioning
